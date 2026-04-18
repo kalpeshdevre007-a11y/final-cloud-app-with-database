@@ -21,12 +21,12 @@ class LessonInline(admin.StackedInline):
     extra = 5
 
 
-class LessonAdmin(admin.ModelAdmin):
-    inlines = [QuestionInline]
-
-
 class CourseAdmin(admin.ModelAdmin):
-    inlines = [LessonInline]
+    inlines = [LessonInline, QuestionInline]
+
+
+class LessonAdmin(admin.ModelAdmin):
+    pass
 
 
 admin.site.register(Course, CourseAdmin)
